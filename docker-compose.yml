@@ -1,0 +1,7 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    tty: true
+    volumes:
+      - ./data/ollama:/root/.ollama

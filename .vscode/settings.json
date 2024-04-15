@@ -1,0 +1,50 @@
+{
+    "files.exclude": {
+        "**/__pycache__": true,
+        ".mypy_cache": true,
+        ".venv": false
+    },
+    "python.analysis.indexing": true,
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.packageIndexDepths": [
+        { "name": "chromadb", "depth": 2 },
+        { "name": "llama-index", "depth": 4 },
+        { "name": "llama-index-embeddings-huggingface", "depth": 4 },
+        { "name": "llama-index-llms-ollama", "depth": 4 },
+        { "name": "llama-index-readers-file", "depth": 4 },
+        { "name": "llama-index-vector-stores-chroma", "depth": 4 }
+    ],
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/src"
+    ],
+    "python.defaultInterpreterPath": ".venv/bin/python",
+    "python.envFile": "",
+    "mypy.enabled": true,
+    "mypy.runUsingActiveInterpreter": true,
+    "mypy.targets": ["src"],
+    "mypy.configFile": "./pyproject.toml",
+    "mypy.debugLogging": false,
+    "ruff.enable": true,
+    "ruff.lint.args": [
+        "--config=${workspaceFolder}/pyproject.toml"
+    ],
+    "pylint.args": [
+        "--load-plugins pylint_pydantic",
+        "--rcfile=${workspaceFolder}/.pylintrc"
+    ],
+    "pylint.importStrategy": "fromEnvironment",
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": false,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnPaste": false,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "never",
+            "source.fixAll": "explicit"
+        },
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4
+    },
+    "python.analysis.typeCheckingMode": "basic"
+}
