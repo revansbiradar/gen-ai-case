@@ -58,7 +58,7 @@ app run
 >>> Succinctly summarize what disturbes Victor's sleep?
 
 Victor is disturbed by the cawing of crows outside his window, which keeps him awake and prevents him from falling asleep.
-![image description](src/images/ollama_response.png)
+![images][ollama_response.png]
 
 
 ## llama2 trained model Response(local RAG)
@@ -74,6 +74,6 @@ query="Succinctly summarize what disturbes Victor's sleep?" contexts=['I had bee
 [2024-04-24 19:35:45,788] INFO [main:33] Evaluated: True
 [2024-04-24 19:35:45,789] INFO [main:35] Complete.
 
-![image description](src/images/llama2_response.png)
+![images][llama2_response.png]
 
 
