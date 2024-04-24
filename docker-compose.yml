@@ -3,5 +3,30 @@ services:
     image: ollama/ollama:latest
     container_name: ollama
     tty: true
+    ports:
+      - 11434:11434
     volumes:
       - ./data/ollama:/root/.ollama
+    networks:
+      - net
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            count: 1
+            capabilities: [gpu]
+
+  chroma:
+    image: ghcr.io/chroma-core/chroma:latest
+    container_name: chromadb
+    volumes:
+      - ./data/chroma:/root/.chroma
+    ports:
+      - 8000:8000
+    networks:
+      - net
+
+networks:
+  net:
+    driver: bridge

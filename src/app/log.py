@@ -6,15 +6,20 @@ __all__ = ["get_logger"]
 
 
 def get_logger(name: str) -> logging.Logger:
+    logger = logging.getLogger(name)
+
     formatter = logging.Formatter(
         "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s"
     )
 
-    handler = logging.StreamHandler()
-    handler.setFormatter(formatter)
+    c_handler = logging.StreamHandler()
+    f_handler = logging.FileHandler('app.log')
+    c_handler.setFormatter(formatter)
+    f_handler.setFormatter(formatter)
 
-    logger = logging.getLogger(name)
+
     logger.setLevel(logging.DEBUG)
-    logger.addHandler(handler)
+    logger.addHandler(c_handler)
+    logger.addHandler(f_handler)
 
     return logger

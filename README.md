@@ -52,3 +52,28 @@ poetry install
 # Run __main__.py
 app run
 ```
+
+
+## Ollama Response
+>>> Succinctly summarize what disturbes Victor's sleep?
+
+Victor is disturbed by the cawing of crows outside his window, which keeps him awake and prevents him from falling asleep.
+![image description](src/images/ollama_response.png)
+
+
+## llama2 trained model Response(local RAG)
+sentence_collection 79c048a2-00da-48f3-9280-40dfb2f26bd3
+nodes_collection d5ff5657-7110-4b74-bbe2-8dd18e6c956c
+response Victor's sleep is disturbed by the thoughts of his brother William's death, which he learned through a letter from their father.
+response Victor's inability to sleep is due to his watching and misery.
+[2024-04-24 19:32:04,950] INFO [main:25] Query response: Victor's inability to sleep is due to his watching and misery.
+sentence_collection 79c048a2-00da-48f3-9280-40dfb2f26bd3
+nodes_collection d5ff5657-7110-4b74-bbe2-8dd18e6c956c
+True
+query="Succinctly summarize what disturbes Victor's sleep?" contexts=['I had been awake the \nwhole of the preceding night, my nerves were agitated, and \nmy eyes inflamed by watching and misery. ', '‘Pardon this intrusion,’ said I; ‘I am a traveller \nin want of a little rest; you would greatly oblige me if you \nwould allow me to remain a few minutes before the fire.’\n‘‘Enter,’ said De Lacey, ‘and I will try in what manner I \ncan to relieve your wants; but, unfortunately, my children \nare from home, and as I am blind, I am afraid I shall find it \ndifficult to procure food for you.’\n‘‘Do not trouble yourself, my kind host; I have food; it is \nwarmth and rest only that I need.’'] response="Victor's inability to sleep is due to his watching and misery." passing=True feedback='YES' score=1.0 pairwise_source=None invalid_result=False invalid_reason=None
+[2024-04-24 19:35:45,788] INFO [main:33] Evaluated: True
+[2024-04-24 19:35:45,789] INFO [main:35] Complete.
+
+![image description](src/images/llama2_response.png)
+
+

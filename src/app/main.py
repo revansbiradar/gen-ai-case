@@ -13,10 +13,11 @@ logger = get_logger("main")
 def main() -> None:
     logger.info("Started.")
 
-    # ingest()
+    ingest()
 
     response = query("Succinctly summarize what disturbes Victor's sleep?")
 
+    print("response", response)
     if not response or not response:
         logger.info("No query response! Aborting...")
         return
@@ -32,3 +33,4 @@ def main() -> None:
     logger.info("Evaluated: %s", eval_response)
 
     logger.info("Complete.")
+
